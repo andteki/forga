@@ -7,12 +7,12 @@ import {
 
 import styles from './Button.style.js';
 
-export default (title, handleButton) => {
+export default ({title, onPress}) => {
     return(
         <View>
             <TouchableHighlight
                 style={styles.runButton}
-                onPress={handleButton}
+                onPress={onPress}
                 >
                 <Text style={styles.runText}>{title}</Text>
             </TouchableHighlight>            

@@ -7,12 +7,13 @@ import {
 } from 'react-native';
 
 import styles from './App.style.js';
-import Button from './components/Button'
+import Button from './components/Button.js'
 
 export default function App() {
   const [all, setAll] = useState(0);
   const [car, setCar] = useState(0);
   const [truck, setTruck] = useState(0);
+  const [ped, setPed] = useState(0);
 
   function handleDelButton() {
     setAll(0);
@@ -27,38 +28,33 @@ export default function App() {
     setTruck(truck+1)
     setAll(all+1)
   }
+  function handlePedButton() {
+    setPed(truck+1)
+    setAll(all+1)
+  }
   return (
     <View style={styles.container}>
-      <Text>Forgalom számláló aaa</Text>
+      <Text>Forgalom számláló</Text>
       
-      <TouchableHighlight
-          style={styles.runButton}
-          onPress={handleDelButton}
-          >
-          <Text style={styles.runText}>Mindent töröl</Text>
-      </TouchableHighlight>
+      <Button title="Mindent töröl" 
+      onPress={handleDelButton} />
 
+ 
       <Text style={styles.sumtext}>Összes: {all}</Text>
       <Text>{car}</Text>
 
-      <TouchableHighlight
-          style={styles.runButton}
-          onPress={handleCarButton}
-          >
-          <Text style={styles.runText}>Személy</Text>
-      </TouchableHighlight>
-
-
+      <Button title="Személy" 
+      onPress={handleCarButton} />
 
       <Text>{truck}</Text>
 
-      <TouchableHighlight
-          style={styles.runButton}
-          onPress={handleTruckButton}
-          >
-          <Text style={styles.runText}>Teher</Text>
-      </TouchableHighlight>
+      <Button title="Teher" 
+      onPress={handleTruckButton} />
 
+      <Text>{ped}</Text>
+
+      <Button title="Gyalolgos" 
+      onPress={handlePedButton} />
 
 
       <StatusBar style="auto" />

@@ -4,7 +4,7 @@ export default StyleSheet.create({
   runButton: {
     backgroundColor: 'blue',
     marginTop: 10,
-    marginBottom: 70,
+    marginBottom: 20,
     padding: 10,
     borderRadius: 3,
   },
