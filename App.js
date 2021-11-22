@@ -11,9 +11,16 @@ import {
 export default function App() {
   const [all, setAll] = useState(0);
   const [car, setCar] = useState(0);
+  const [truck, setTruck] = useState(0);
 
   function handleDelButton() {
     setAll(0);
+  }
+  function handleCarButton() {
+
+  }
+  function handleTruckButton() {
+    
   }
   return (
     <View style={styles.container}>
@@ -26,16 +33,29 @@ export default function App() {
           <Text style={styles.runText}>Mindent töröl</Text>
       </TouchableHighlight>
 
-      <Text>Összes: {all}</Text>
+      <Text style={styles.sumtext}>Összes: {all}</Text>
       <Text>{car}</Text>
 
       <TouchableHighlight
           style={styles.runButton}
-          onPress={handleDelButton}
+          onPress={handleCarButton}
           >
-          <Text style={styles.runText}>Mindent töröl</Text>
+          <Text style={styles.runText}>Személy</Text>
       </TouchableHighlight>
-      
+
+
+
+      <Text>{truck}</Text>
+
+      <TouchableHighlight
+          style={styles.runButton}
+          onPress={handleTruckButton}
+          >
+          <Text style={styles.runText}>Személy</Text>
+      </TouchableHighlight>
+
+
+
       <StatusBar style="auto" />
     </View>
   );
@@ -62,4 +82,7 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     fontSize: 22,
   },  
+  sumtext: {
+    marginBottom: 70,
+  }
 });
